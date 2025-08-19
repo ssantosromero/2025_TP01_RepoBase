@@ -20,15 +20,7 @@ function validarDatos(datos) {
     return { valido: true, error: null };
 }
 
-saludar();
-
-// Ejemplo de uso del validador
-const datosEjemplo = { nombre: 'Juan', email: 'juan@email.com' };
-console.log('Validación:', validarDatos(datosEjemplo));
-
-
-
-// Nueva funcionalidad: Sistema de logging
+// Sistema de logging
 class Logger {
     constructor() {
         this.logs = [];
@@ -53,10 +45,8 @@ class Logger {
     }
 }
 
-// Instancia global del logger
 const logger = new Logger();
 
-// Función para procesar datos del archivo info.txt
 function procesarInformacion(info) {
     logger.info('Iniciando procesamiento de información');
     
@@ -69,6 +59,18 @@ function procesarInformacion(info) {
     return true;
 }
 
-// Ejemplo de uso
+// HOTFIX: Función calcularPromedio corregida
+function calcularPromedio(numeros) {
+    if (!numeros || numeros.length === 0) {
+        return 0;
+    }
+    return numeros.reduce((a, b) => a + b) / numeros.length;
+}
+
+// Ejecución
+saludar();
+const datosEjemplo = { nombre: 'Juan', email: 'juan@email.com' };
+console.log('Validación:', validarDatos(datosEjemplo));
 logger.info('Sistema iniciado correctamente');
 procesarInformacion('Información inicial');
+console.log('Promedio:', calcularPromedio([1, 2, 3]));
