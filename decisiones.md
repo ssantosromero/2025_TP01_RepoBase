@@ -13,3 +13,5 @@ git config --global user.email "santosromeroreyna@gmail.com"
 Configuré mi identidad global para que todos los commits queden correctamente atribuidos a mi persona, asegurando trazabilidad en el equipo.
 
 5)Cree este archivo llamado "decisiones.md" a traves del text mate(mate decisiones.md)
+
+6) git add decisiones.md y git commit informando lo que subi a git
