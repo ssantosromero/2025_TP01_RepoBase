@@ -5,9 +5,12 @@ function saludar() {
 
 saludar();
 
-// ERROR SIMULADO: División por cero
+// HOTFIX: Corregir división por cero
 function calcularPromedio(numeros) {
-    return numeros.reduce((a, b) => a + b) / 0; // BUG: división por 0
+    if (!numeros || numeros.length === 0) {
+        return 0;
+    }
+    return numeros.reduce((a, b) => a + b) / numeros.length; // CORREGIDO
 }
 
-console.log(calcularPromedio([1, 2, 3])); // Esto dará Infinity
+console.log(calcularPromedio([1, 2, 3])); // Ahora dará 2
