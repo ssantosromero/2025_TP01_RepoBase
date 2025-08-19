@@ -54,3 +54,42 @@ mate src/app.js
 git add src/app.js
 git commit -m "feat: agregue sistema de logging y procesamiento de info"
 
+## 4. Corrección de Error (Hotfix)
+
+11) Simular error en main, nos dirijimos a la branch main primero y modificamos el archivo:
+
+git checkout main
+mate src/app.js
+
+12) Agregue la funcion calcularPromedio con división por 0, lo subimos a git y hacemos commit
+
+git add src/app.js
+git commit -m "feat: agregue función calcularPromedio (CON error - división por 0)"
+
+13) Cree rama Hotfix y nos situamos en esa branch:
+
+git branch hotfix/correccion-division-cero
+git checkout hotfix/correccion-division-cero
+
+14) Corregi el error, corregí la división por 0 agregando validación de array vacío
+
+git add src/app.js
+git commit -m "hotfix: corregi la división por cero en calcularPromedio"
+
+15) Aplique fix a main, nos situamos en main y hacemos merge con hotfix:
+
+git checkout main
+git merge hotfix/correccion-division-cero
+
+16)Aplique fix a rama feature, nos situamos en feature, y hacemos merge con main:
+
+git checkout feature/nueva-funcionalidad
+git merge main
+
+17)Hubo un conflicto connel merge que solucione manualmente, y le hice un add y commit.
+git add src/app.js
+git commit -m "fix: resolver conflicto de merge en archivo app.js"
+
+Usé merge de main a feature para traer el hotfix, asegurando que ambas ramas tengan la corrección.
+
+
