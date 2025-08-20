@@ -103,3 +103,41 @@ Despues hice el famoso add, commit, push
 
 git tag v1.0 -m "Versión 1.0: Sistema completo con validación, logging y hotfix aplicado"
 git push origin v1.0
+
+
+## 6. Reflexión: Calidad y Trazabilidad en Equipos Reales
+
+### Problemas encontrados y resoluciones:
+### Problemas encontrados y resoluciones:
+- **Conflictos de merge:** Se resolvieron manualmente priorizando mantener todas las funcionalidades
+- **Permisos de repositorio:** Inicialmente intenté pushear al repo original, solucionado con fork
+- **Integración de hotfix:** Cherry-pick falló, resuelto con merge directo desde main
+
+### Como aseguraria calidad en un equipo real:
+
+#### Lo que aplicaria del TP:
+- **Commits claros** como hice: "feat:", "fix:", "docs:" para que el equipo entienda rápido
+- **Una rama por funcionalidad** - evita que se pisen el código entre compañeros
+- **Pull Requests obligatorios** - que otro revise tu código antes de subir a main
+- **Tags para versiones** como el v1.0 que cree - para saber exactamente que se deployó
+
+#### Herramientas que investigaría:
+- **GitHub Actions o Jenkins** para que corra tests automáticamente cuando hago push
+- **ESLint o Prettier** para que todo el código tenga el mismo formato
+- **SonarQube** que me dijeron que detecta bugs automáticamente 
+- **Utilizando como ayuda el Claude.AI encontré que existen herramientas como Husky** para validar commits antes de subirlos
+
+#### Reglas que estableceria:
+- **main siempre tiene que funcionar** - nada roto en producción
+- **Code review de al menos 1 persona** - 4 ojos ven más que 2
+- **Documentar en README** que hace cada función importante
+- **Backups regulares** del repositorio por las dudas
+
+#### Para proyectos grandes:
+- **Separar en módulos** - cada dev se enfoca en su parte
+- **Sprint planning** con Jira o Trello para organizar tareas
+- **Daily standups** para no duplicar trabajo
+- **Testing automatizado** - que se ejecute solo cuando hago push
+
+### Por que elegí este flujo:
+Me pareció lo más simple pero completo. Feature branches me permitió experimentar sin romper main, y el hotfix me enseñó como arreglar bugs urgentes sin afectar el desarrollo normal.
