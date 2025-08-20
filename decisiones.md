@@ -92,4 +92,14 @@ git commit -m "fix: resolver conflicto de merge en archivo app.js"
 
 Usé merge de main a feature para traer el hotfix, asegurando que ambas ramas tengan la corrección.
 
+18)Tuve un conflicto con el merge de y la nueva funcionalidad, lo arregle manualmente
 
+git checkout main
+git merge feature/nueva-funcionalidad
+
+Despues hice el famoso add, commit, push
+
+19) Cree el tag v1.0, usé Semantic Versioning (SemVer) v1.0 para marcar la primera versión estable del sistema.
+
+git tag v1.0 -m "Versión 1.0: Sistema completo con validación, logging y hotfix aplicado"
+git push origin v1.0
